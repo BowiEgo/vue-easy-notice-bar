@@ -1,4 +1,7 @@
 ## VueEasyNoticeBar 使用简单的Vue通告栏组件
+<a href="https://www.npmjs.com/package/vue-easy-notice-bar"><img src="https://img.shields.io/npm/v/vue-easy-notice-bar.svg" alt="Version"></a>
+<a href="https://www.npmjs.com/package/vue-easy-notice-bar"><img src="https://img.shields.io/npm/l/vue-easy-notice-bar.svg" alt="License"></a>
+<a href="https://www.npmjs.com/package/vue-easy-notice-bar"><img src="https://img.shields.io/npm/dm/vue-easy-notice-bar.svg" alt="Downloads"></a>
 
 ### 使用指南
 
