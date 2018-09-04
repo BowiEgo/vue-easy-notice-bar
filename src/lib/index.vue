@@ -1,5 +1,8 @@
 <template>
-  <div class="notice-bar" :style="compStyle" @click="handleClick">
+  <div class="notice-bar"
+    :style="compStyle"
+    @click="handleClick"
+    ref="noticeBar">
     <div class="left-icon">
       <div class="left-icon__custom" v-if="leftIcon !== ''">
         <img :src="leftIcon">
@@ -65,10 +68,15 @@
         type: Boolean,
         default: false
       },
-      interval: {
+      interval: {  // 垂直滚动间隔时间，单位ms
+        type: Number,
         default: 3000
       },
+      speed: {  // 水平滚动速度，单位px/s
+        type: Number
+      },
       duration: {
+        type: Number,
         default: 3
       },
       vertical: Boolean
@@ -84,8 +92,21 @@
           return ['']
         }
       },
+      cpuDurationT: {
+        get: function() {
+          if(!!this.speed) {
+            let scrollW = document.body.clientWidth
+            return scrollW / this.speed
+          } else {
+            return durationT
+          }
+        },
+        set: function(val) {
+          return this.cpuDurationT
+        }
+      },
       cpuTransition() {
-        return !this.vertical ? `transform ${this.durationT}s linear` : `transform ${this.duration}s cubic-bezier(.17,.67,.41,1.03)`
+        return !this.vertical ? `transform ${this.cpuDurationT}s linear` : `transform ${this.duration}s cubic-bezier(.17,.67,.41,1.03)`
       },
       textItemStyle() {
         return !this.vertical ? {display: 'inline-block', transition: 'none', color: this.color, paddingRight: this.textGap} : {width: '100%', height: `${this.height}px`, color: this.color, transition: this.cpuTransition}
@@ -165,18 +186,18 @@
       },
       scrollHori(wid) {
         this.setTransition(this.$refs.textWrapper)
-        this.setTransform(this.$refs.textWrapper, wid, 0, 0, this.durationT * 1000 - 300).then(() => {
+        this.setTransform(this.$refs.textWrapper, wid, 0, 0, this.cpuDurationT * 1000 - 300).then(() => {
           this.initTransiton(this.$refs.textWrapper)
           this.initTransform(this.$refs.textWrapper)
         })
       },
       loop() {
         if (!this.vertical) {
-          this.durationT = this.wrapperWid / 40
+          this.cpuDurationT = this.wrapperWid / 40
           this.scrollHori(-this.wrapperWid - this.containerWid)
           this.scrollInterval = setInterval(() => {
             this.scrollHori(-this.wrapperWid - this.containerWid)
-          }, this.durationT * 1000)
+          }, this.cpuDurationT * 1000)
         } else {
           this.scrollInterval = setInterval(() => {
             this.idx ++
