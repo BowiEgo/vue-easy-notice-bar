@@ -1,7 +1,19 @@
 ## VueEasyNoticeBar 使用简单的Vue通告栏组件
 
 ### 使用指南
-#### 全局安装
+
+#### 安装
+
+##### NPM
+``` javascript
+npm i vue-easy-notice-bar -S 
+``` 
+##### YARN
+``` javascript
+yarn add vue-easy-notice-bar
+``` 
+
+#### 全局插件
 ``` javascript
 import NoticeBar from 'vue-easy-notice-bar'
 
