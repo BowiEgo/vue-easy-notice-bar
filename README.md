@@ -1,15 +1,15 @@
-## VueNoticeBar Vue通告栏组件
+## VueEasyNoticeBar 使用简单的Vue通告栏组件
 
 ### 使用指南
 #### 全局安装
 ``` javascript
-import NoticeBar from 'vue-noticebar'
+import NoticeBar from 'vue-easy-notice-bar'
 
 Vue.use(NoticeBar);
 ```
 #### 单文件引入
 ``` javascript
-import NoticeBar from 'vue-noticebar'
+import NoticeBar from 'vue-easy-notice-bar'
 
 export default {
   components: {

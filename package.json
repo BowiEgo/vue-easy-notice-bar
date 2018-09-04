@@ -1,8 +1,8 @@
 {
-  "name": "vue-notice-bar",
+  "name": "vue-easy-notice-bar",
   "version": "1.0.0",
   "description": "Vue.js 2+ notice-bar plugin",
-  "main": "index.js",
+  "main": "dist/vue-easy-notice-bar.js",
   "scripts": {
     "build": "webpack --config build/webpack.prod.conf.js",
     "test": "npm run unit"
@@ -15,6 +15,10 @@
   ],
   "author": "bowiego",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BowiEgo/vue-notice-bar.git"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "7",

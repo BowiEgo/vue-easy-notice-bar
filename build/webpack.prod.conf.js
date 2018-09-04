@@ -10,8 +10,8 @@ module.exports = merge(webpackBaseConfig, {
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/dist/',
-    filename: 'vue-notice-bar.js',
-    library: 'vue-notice-bar',
+    filename: 'vue-easy-notice-bar.js',
+    library: 'vue-easy-notice-bar',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },

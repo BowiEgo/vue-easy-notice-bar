@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import NoticeBar from '../../dist/vue-notice-bar'
+import NoticeBar from '../../dist/vue-easy-notice-bar'
 // import NoticeBar from '../../src/lib/index'
 
 export default {

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Demo from './demo'
-// import Noticebar from '../dist/vue-notice-bar'
+// import Noticebar from 'vue-easy-notice-bar'
 
 // Vue.use(Noticebar)
 Vue.config.productionTip = false
