@@ -69,6 +69,8 @@ export default {
 | left-icon | 左侧图标图片 URL | `String` | - |
 | color | 文本颜色 | `String` | `#fff` |
 | bg-color | 滚动条背景 | `String` | `#03a9f4` |
+| duration | 滚动时间 | `Number` | `3(s)` |
+| speed | 滚动速度 | `Number` | `无(px/s)` |
 
 ### Event
 
