@@ -3,21 +3,21 @@
     <notice-bar
       :text="text"
       :bg-color="'#fff'"
-      :color="'#03a9f4'"
-      left-icon="http://o9kkuebr4.bkt.clouddn.com/notice-color.png"/>
+      :speed="20"
+      :color="'#03a9f4'"/>
   </div>
 </template>
 
 <script>
 // import NoticeBar from 'vue-easy-notice-bar'
 // import NoticeBar from '../../dist/vue-easy-notice-bar'
-// import NoticeBar from '../../src/lib/index'
+import NoticeBar from '../../src/lib/index'
 
 export default {
   name: 'Demo',
-  // components: {
-  //   NoticeBar
-  // },
+  components: {
+    NoticeBar
+  },
   data() {
     return {
       text: []
@@ -30,9 +30,9 @@ export default {
       '换个电脑，可以解决百分之九十的问题。',
       '解决掉提出bug的人,可以解决百分之一百的问题。'
     ]
-    setTimeout(() => {
-      this.text = '1212121212121212'
-    }, 2000)
+    // setTimeout(() => {
+    //   this.text = '1212121212121212'
+    // }, 10000)
   }
 }
 </script>
