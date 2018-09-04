@@ -9,14 +9,15 @@
 </template>
 
 <script>
-import NoticeBar from '../../dist/vue-easy-notice-bar'
+// import NoticeBar from 'vue-easy-notice-bar'
+// import NoticeBar from '../../dist/vue-easy-notice-bar'
 // import NoticeBar from '../../src/lib/index'
 
 export default {
   name: 'Demo',
-  components: {
-    NoticeBar
-  },
+  // components: {
+  //   NoticeBar
+  // },
   data() {
     return {
       text: []

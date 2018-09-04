@@ -3819,6 +3819,13 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vue-easy-notice-bar@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/vue-easy-notice-bar/download/vue-easy-notice-bar-1.0.0.tgz#5331be112441c78f7e3fca95376c6128e1752769"
+  dependencies:
+    less "^3.8.1"
+    vue "^2.5.17"
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.0"
   resolved "http://registry.npm.taobao.org/vue-hot-reload-api/download/vue-hot-reload-api-2.3.0.tgz#97976142405d13d8efae154749e88c4e358cf926"
