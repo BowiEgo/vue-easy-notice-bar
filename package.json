@@ -1,0 +1,36 @@
+{
+  "name": "vue-notice-bar",
+  "version": "1.0.0",
+  "description": "Vue.js 2+ notice-bar plugin",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config build/webpack.prod.conf.js",
+    "test": "npm run unit"
+  },
+  "keywords": [
+    "Vue",
+    "Vue plugin",
+    "2.0",
+    "notice-bar"
+  ],
+  "author": "bowiego",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "7",
+    "cross-env": "^5.2.0",
+    "css-loader": "^1.0.0",
+    "less-loader": "^4.1.0",
+    "uglifyjs-webpack-plugin": "^1.3.0",
+    "vue-loader": "^15.4.1",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.7",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "less": "^3.8.1",
+    "vue": "^2.5.17"
+  }
+}

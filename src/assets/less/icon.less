@@ -1,0 +1,66 @@
+// @basePicUrl: '../images';
+// @icon: icon;
+
+// //---------- mixin
+// .icon {
+//     position: relative;
+// }
+
+// .before {
+//     content: '';
+//     position: absolute;
+//     left: 50%;
+//     top: 50%;
+//     transform: translate(-50%,-50%);
+//     display: block;
+//     width: 100%;
+//     height: 100%;
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     background-position: center;
+// }
+
+// //---------- main
+// .@{icon} {
+//     &:before {
+//         .before;
+//     }
+//     //---------- .icon-trophy-1/2/3/u start
+//     &-@{trophy} {
+//         .trophy;
+//         .loop(3);
+//         &-u {
+//             .trophy;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             padding-right: 2px;
+//             letter-spacing: -2px;
+//             font-size: 16px;
+//         }
+//         &-u:before {
+//             background-image: url(../images/portfolio/mingci.png);
+//         }
+//     }
+//     //---------- .icon-people start
+//     &-people:before {
+//         .bgTeam('people@2x');
+//     }
+//     //---------- .icon-time start
+//     &-time:before {
+//         .bgTeam('time@2x');
+//     }
+//     //---------- .icon-zhu start
+//     &-zhu:before {
+//         .bgTeam('zhu@2x');
+//         background-position: 0 2px;
+//     }
+//     //---------- .icon-vs start
+//     &-vs:before {
+//         .bgTeam('VS@2x');
+//     }
+//     //---------- .icon-loss start
+//     &-loss:before {
+//         .bgTeam('loss@2x');
+//     }
+// }
