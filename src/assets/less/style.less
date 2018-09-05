@@ -1,0 +1,75 @@
+@import '../css/iconfont.css';
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.paddingLR {
+  padding-left: 16px;
+  padding-right: 10px;
+}
+
+.notice-bar {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #d04519;
+  background-size: cover;
+  overflow: hidden;
+  .paddingLR;
+  .icon-laba {
+    color: #fffbbc;
+    font-size: 19px;
+  }
+  .text-container {
+    position: relative;
+    margin-left: 5px;
+    width: 90%;
+    color: #fffbbc;
+    height: 100%;
+    overflow: hidden;
+  }
+  .text-duplicate {
+    width: 81%;
+    position: absolute;
+  }
+  .text {
+    display: inline-block;
+    transition: none;
+
+    // display: flex;
+    align-items: center;
+    span {
+      .ellipsis;
+    }
+  }
+}
+
+.text-wrapper {
+  display: flex;
+  height: 100%;
+}
+
+.left-icon__custom {
+  width: 20px;
+  position: relative;
+  img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.right-icon {
+  // position: absolute;
+  // top: 50%;
+  // right: 10px;
+  // transform: translateY(-50%);
+  width: 20px;
+  padding-left: 6px;
+}

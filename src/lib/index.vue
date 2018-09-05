@@ -9,8 +9,12 @@
       </div>
       <i class="iconfont icon-laba" :style="{ color: color }"></i>
     </div>
-    <div class="text-container text-swiper" ref="textContainer">
-      <div class="text-wrapper" ref="textWrapper">
+    <div
+      class="text-container text-swiper"
+      ref="textContainer">
+      <div
+        class="text-wrapper"
+        ref="textWrapper">
         <div
           class="text"
           :style="textItemStyle"
@@ -19,8 +23,13 @@
           <span>{{ item }}</span>
         </div>
       </div>
-      <div class="text-duplicate" ref="textDuplicate" :style="textDuplicateStyle">
-        <div class="text"
+      <div
+        class="text-duplicate"
+        ref="textDuplicate"
+        :style="textDuplicateStyle"
+        v-if="vertical">
+        <div
+          class="text"
           :style="{
             height: `${height}px`,
             color: color,
@@ -62,7 +71,8 @@
         default: '14px'
       },
       leftIcon: {
-        type: String
+        type: String,
+        default: ''
       },
       special: {
         type: Boolean,
@@ -255,7 +265,7 @@
 </script>
 
 <style lang="less" scoped>
-// @import '../assets/less/icon.less';
+@import '../assets/css/iconfont.css';
 
 * {
   box-sizing: border-box;
