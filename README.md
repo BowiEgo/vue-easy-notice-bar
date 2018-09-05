@@ -66,11 +66,16 @@ export default {
 |-----------|-----------|-----------|-------------|
 | text | 通告栏文字 | `String || Array` | `''` |
 | vertical | 滚动方向是否为垂直 | `Boolean` | `false` |
+| bg-img | 背景图片 URL | `String` | - |
 | left-icon | 左侧图标图片 URL | `String` | - |
 | color | 文本颜色 | `String` | `#fff` |
 | bg-color | 滚动条背景 | `String` | `#03a9f4` |
-| duration | 滚动时间 | `Number` | `3(s)` |
-| speed | 滚动速度 | `Number` | `无(px/s)` |
+| speed | 滚动速度(px/s) | `Number` | `50` |
+| duration | 滚动时间(ms) | `Number` | `-` |
+| delay | 动画延迟时间(ms) | `Number` | `1000` |
+| outview | 是否从视野外开始滚动 | `Boolean` | `false` |
+| scrollable | 是否禁止动画 | `Boolean` | `true` |
+| mode | 通告栏模式，可选值:right、close | `String` | `-` |
 
 ### Event
 
@@ -78,12 +83,12 @@ export default {
 |-----------|-----------|-----------|
 | click | 点击事件回调 | - |
 
-### Features
+### TODO
 
-- [ ] 添加默认icon
-- [ ] 可点击状态显示右箭头
-- [ ] 添加关闭功能和按钮
-- [ ] 禁用滚动属性
+- [x] 添加默认icon
+- [x] 可显示右箭头
+- [x] 添加关闭功能和按钮
+- [x] 禁用滚动属性
 - [ ] 分离水平滚动和垂直滚动组件，提取mixin
 - [ ] 3D垂直翻转
 - [ ] 手势滑动
