@@ -91,6 +91,13 @@ export default {
   },
 
   computed: {
+    textList() {
+      if (!Array.isArray(this.text)) {
+        console.error('property text‘s type should be array in NoticeBarVertical')
+      } else {
+        return this.text
+      }
+    },
     cpuDuration() {
       return this.duration <= this.interval
         ? this.duration : this.interval

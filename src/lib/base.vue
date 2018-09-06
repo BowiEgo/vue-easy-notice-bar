@@ -51,16 +51,6 @@
     },
 
     computed: {
-      textList() {
-        if (typeof this.text === 'string') {
-          return [this.text]
-        } else if (Array.isArray(this.text)) {
-          return this.text
-        } else {
-          console.error('property text‘s type should be string or array')
-          return ['']
-        }
-      },
       style() {
         return {
           height: `${this.height}px`,
