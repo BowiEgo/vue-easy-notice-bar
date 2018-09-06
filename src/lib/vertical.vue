@@ -23,7 +23,7 @@
         ref="textWrapper">
         <div
           class="text"
-          :style="textItemStyle"
+          :style="textItemStyle(index)"
           v-for="(item, index) in textList"
           :key="index">
           <span>{{ item }}</span>
@@ -34,13 +34,9 @@
         ref="textDuplicate"
         :style="textDuplicateStyle">
         <div
+          v-if="!threeD"
           class="text"
-          :style="{
-            height: `${height}px`,
-            color: color,
-            lineHeight: `${height}px`,
-            transition: cpuTransition
-          }">
+          :style="textItemStyle(textList.length)">
           <span>{{ textList[0] }}</span>
         </div>
       </div>
@@ -73,7 +69,9 @@ export default {
   data() {
     return {
       idx: 0,
-      itemDul: null
+      itemDul: null,
+      setBottom: false,
+      isFirstScroll: true
     }
   },
 
@@ -82,30 +80,36 @@ export default {
       type: Number,
       default: 3000
     },
-    duration: {  // 垂直滚动动画时间，单位ms
+    duration: {  // 垂直滚动动画时间，单位ms，最大不超过滚动间隔时间interval
       type: Number,
       default: 1000
+    },
+    threeD: {
+      type: Boolean,
+      default: false
     }
   },
 
   computed: {
+    cpuDuration() {
+      return this.duration <= this.interval
+        ? this.duration : this.interval
+    },
     cpuTransition() {
-      return `transform ${this.duration / 1000}s cubic-bezier(.17,.67,.41,1.03)`
+      if (this.threeD && this.setBottom) {
+        return `none`
+      }
+      return `transform ${this.cpuDuration / 1000}s
+        cubic-bezier(.17,.67,.41,1.03)`
     },
     textDuplicateStyle() {
       return { top: `${this.height}px` }
     },
     textWrapStyle() {
       return {
-        display: 'block'
-      }
-    },
-    textItemStyle() {
-      return {
-        width: '100%',
-        height: `${this.height}px`,
-        color: this.color,
-        transition: this.cpuTransition
+        display: 'block',
+        // perspective: '500px',
+        transformStyle: 'preserve-3d'
       }
     }
   },
@@ -115,6 +119,37 @@ export default {
   },
 
   methods: {
+    textItemStyle(index) {
+      return {
+        width: '100%',
+        height: `${this.height}px`,
+        color: this.color,
+        transition: this.cpuTransition,
+        transformOrigin: this.threeD ? '50% 50% -12px' : 'unset',
+        transform: this.cpuRotate(index),
+        position: !this.threeD ? 'relative' : 'absolute'
+      }
+    },
+    cpuRotate(index) {
+      if (!this.threeD) {
+        return 'none'
+      } else {
+        if (index === this.textList.length - 1
+          && this.idx === 0
+          && !this.isFirstScroll){
+          return !this.setBottom ?
+            'rotate3d(1, 0, 0, 90deg)' : 'rotate3d(1, 0, 0, -90deg)'
+        }
+        if (index === this.idx - 1) {
+          return !this.setBottom ?
+            'rotate3d(1, 0, 0, 90deg)' : 'rotate3d(1, 0, 0, -90deg)'
+        } else if (index === this.idx) {
+          return 'rotate3d(1, 0, 0, 0)'
+        } else {
+          return 'rotate3d(1, 0, 0, -90deg)'
+        }
+      }
+    },
     init() {
       return new Promise((resolve, reject) => {
         this.$nextTick(() => {
@@ -152,16 +187,20 @@ export default {
     },
     scroll(step) {
       return new Promise((resolve, reject) => {
-        const itemArr = this.itemArr
+        const { itemArr, threeD, scrollH } = this
         for (let i = 0; i < itemArr.length; i++) {
-          this.setTransform(itemArr[i], 0, this.scrollH * (-step), 0)
+          this.setTranslate(itemArr[i], 0, scrollH * (-step), 0)
         }
         setTimeout(() => {
-          resolve(true)
+          resolve()
         }, this.interval)
       })
     },
     loop() {
+      if (this.threeD) {
+        this.loop3D()
+        return
+      }
       this.scroll(1)
       this.idx ++
       this.scrollInterval = setInterval(() => {
@@ -171,7 +210,7 @@ export default {
         if (this.idx !== textList.length) {
           this.scroll(idx)
         } else {
-          this.setTransform(itemDul, 0, -scrollH, 0)
+          !this.threeD && this.setTranslate(itemDul, 0, -scrollH, 0)
           this.scroll(idx).then(() => {
             this.initScroll()
             setTimeout(() => {
@@ -183,6 +222,24 @@ export default {
             }, 30)
           })
         }
+      }, this.interval)
+    },
+    loop3D() {
+      this.idx ++
+      this.setBottom = false
+      setTimeout(() => {
+        this.setBottom = true
+        this.isFirstScroll = false
+      }, this.cpuDuration)
+      this.scrollInterval = setInterval(() => {
+        this.setBottom = false
+        this.idx ++
+        if (this.idx === this.textList.length) {
+          this.idx = 0
+        }
+        setTimeout(() => {
+          this.setBottom = true
+        }, this.cpuDuration)
       }, this.interval)
     }
   }

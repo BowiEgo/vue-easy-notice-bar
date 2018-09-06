@@ -96,9 +96,18 @@
       setTransition(dom) {
         dom.style.transition = this.cpuTransition
       },
-      setTransform(dom, x, y, z, lag) {
+      setTranslate(dom, x, y, z, lag) {
         return new Promise((resolve, reject) => {
           dom && (dom.style.transform = `translate3d(${x}px, ${y}px, ${z}px)`)
+          setTimeout(() => {
+            resolve(true)
+          }, lag)
+        })
+      },
+      setRotate(dom, x, y, z, deg, lag) {
+        console.log(dom, deg)
+        return new Promise((resolve, reject) => {
+          dom && (dom.style.transform = `rotate3d(${x}, ${y}, ${z}, ${deg})`)
           setTimeout(() => {
             resolve(true)
           }, lag)

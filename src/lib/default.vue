@@ -136,7 +136,7 @@ export default {
     scroll(wid) {
       const Wrap = this.$refs.textWrapper
       this.setTransition(Wrap)
-      this.setTransform(
+      this.setTranslate(
         Wrap,
         wid,
         0,
