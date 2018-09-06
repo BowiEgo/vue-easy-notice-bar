@@ -16,7 +16,7 @@ npm i vue-easy-notice-bar -S
 yarn add vue-easy-notice-bar
 ``` 
 
-#### 全局插件
+#### 全局插件
 ``` javascript
 import { NoticeBar } from 'vue-easy-notice-bar'
 
