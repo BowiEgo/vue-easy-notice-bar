@@ -3,20 +3,58 @@
     <notice-bar
       :text="text"
       :bg-color="'#fff'"
-      :speed="20"
       :color="'#03a9f4'"/>
+    <notice-bar
+      :text="text"
+      :bg-color="'#fff'"
+      :speed="50"
+      :left-icon="'http://o9kkuebr4.bkt.clouddn.com/notice.png'"
+      :color="'#03a9f4'"/>
+    <notice-bar
+      :text="text"
+      height="40"
+      bg-color="#03a9f4"
+      :delay="1000"
+      color="#fff"/>
+    <notice-bar
+      :text="text"
+      mode="right"
+      bg-color="#ff9800"
+      :speed="80"
+      :delay="0"
+      :outview="true"
+      color="#fff"/>
+    <notice-bar
+      :text="text"
+      mode="close"
+      :scrollable="false"
+      bg-color="#ffdca9"
+      color="#b36f0c"/>
+    <notice-bar-vertical
+      :text="text"
+      bg-color="#ffdca9"
+      color="#b36f0c"/>
+    <notice-bar-vertical
+      :text="text"
+      three-d
+      bg-color="#ffdca9"
+      :delay="3000"
+      :duration="500"
+      :interval="3000"
+      color="#b36f0c"/>
   </div>
 </template>
 
 <script>
 // import NoticeBar from 'vue-easy-notice-bar'
-// import NoticeBar from '../../dist/vue-easy-notice-bar'
-import NoticeBar from '../../src/lib/index'
+// import { NoticeBar, NoticeBarVertical } from '../../dist/vue-easy-notice-bar'
+import { NoticeBar, NoticeBarVertical } from '../../src/lib/index'
 
 export default {
   name: 'Demo',
   components: {
-    NoticeBar
+    NoticeBar,
+    NoticeBarVertical
   },
   data() {
     return {
