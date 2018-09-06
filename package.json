@@ -10,8 +10,10 @@
   "keywords": [
     "Vue",
     "Vue plugin",
-    "2.0",
-    "notice-bar"
+    "Vue 2",
+    "notice-bar",
+    "noticebar",
+    "vue noticebar"
   ],
   "author": "bowiego",
   "license": "MIT",
