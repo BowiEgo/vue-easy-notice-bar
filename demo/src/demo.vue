@@ -46,7 +46,9 @@
 </template>
 
 <script>
-// import NoticeBar from 'vue-easy-notice-bar'
+// import { NoticeBar, NoticeBarVertical } from 'vue-easy-notice-bar'
+// import NoticeBar from '../../dist/vue-easy-notice-bar'
+// import NoticeBarVertical from '../../dist/vue-easy-notice-bar'
 // import { NoticeBar, NoticeBarVertical } from '../../dist/vue-easy-notice-bar'
 import { NoticeBar, NoticeBarVertical } from '../../src/lib/index'
 

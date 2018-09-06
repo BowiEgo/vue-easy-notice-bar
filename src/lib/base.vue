@@ -95,7 +95,6 @@
         })
       },
       setRotate(dom, x, y, z, deg, lag) {
-        console.log(dom, deg)
         return new Promise((resolve, reject) => {
           dom && (dom.style.transform = `rotate3d(${x}, ${y}, ${z}, ${deg})`)
           setTimeout(() => {

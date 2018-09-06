@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import Base from './base'
+import Base from './Base'
 import { getElWid } from './utils'
  
 export default {
@@ -143,7 +143,7 @@ export default {
       }
       return wrapperWid
     },
-    scroll(wid) {
+    scroll(wid, lag) {
       const Wrap = this.$refs.textWrapper
       this.setTransition(Wrap)
       this.setTranslate(
@@ -151,18 +151,18 @@ export default {
         wid,
         0,
         0,
-        this.cpuDuration * 1000 - 300)
+        this.cpuDuration * 1000 - 100)
         .then(() => {
           this.initTransiton(Wrap)
           this.initTransform(Wrap)
+          Wrap.style.marginLeft = '100%'
         }
       )
     },
     loop() {
       const wW = this.wrapperWid
       const cW = this.containerWid
-      this.cpuDuration = wW / 40
-      this.scroll(- wW - cW)
+      this.scroll(- wW)
       this.scrollInterval = setInterval(() => {
         this.scroll(- wW - cW)
       }, this.cpuDuration * 1000)

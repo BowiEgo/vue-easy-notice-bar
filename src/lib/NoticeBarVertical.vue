@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import Base from './base'
+import Base from './Base'
 import { getElWid, getElHei } from './utils'
  
 export default {
