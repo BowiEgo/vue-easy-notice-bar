@@ -92,7 +92,7 @@ NoticeBarVertical还支持3D视觉滚动
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| text | 通告栏文字 | `String || Array` | `''` |
+| text | 通告栏文字 | `String、Array` | `''` |
 | vertical | 滚动方向是否为垂直 | `Boolean` | `false` |
 | bg-img | 背景图片 URL | `String` | - |
 | left-icon | 左侧图标图片 URL | `String` | - |
