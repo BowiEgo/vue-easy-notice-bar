@@ -17,7 +17,7 @@
       :delay="1000"
       color="#fff"/>
     <notice-bar
-      :text="text"
+      :text="'今天天气多云转晴'"
       mode="right"
       bg-color="#ff9800"
       :speed="80"
@@ -81,6 +81,11 @@ export default {
 * {
   margin: 0;
   padding: 0;
+}
+
+.doc_title {
+  color: rgba(69,90,100,.6);
+  padding: 15px;
 }
 </style>
 
