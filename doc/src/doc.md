@@ -116,8 +116,8 @@ Vue.use(NoticeBarVertical)
 |-----------|-----------|-----------|-------------|
 | text | 通告栏文字 | `String || Array` | `''` |
 | vertical | 滚动方向是否为垂直 | `Boolean` | `false` |
-| bg-img | 背景图片 URL | `String` | - |
-| left-icon | 左侧图标图片 URL | `String` | - |
+| bg-img | 背景图片 URL | `String` | `-` |
+| left-icon | 左侧图标图片 URL | `String` | `-` |
 | color | 文本颜色 | `String` | `#fff` |
 | bg-color | 滚动条背景 | `String` | `#03a9f4` |
 | speed | 滚动速度(px/s) | `Number` | `50` |
