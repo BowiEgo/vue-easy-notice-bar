@@ -162,7 +162,8 @@ export default {
     loop() {
       const wW = this.wrapperWid
       const cW = this.containerWid
-      this.scroll(- wW)
+      const wid = !this.outview ? -wW : -wW - cW
+      this.scroll(wid)
       this.scrollInterval = setInterval(() => {
         this.scroll(- wW - cW)
       }, this.cpuDuration * 1000)
