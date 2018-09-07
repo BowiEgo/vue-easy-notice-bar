@@ -1,12 +1,12 @@
 *
   box-sizing border-box
 pre
-  background-color #272238
+  background-color #f1f1f1
   padding 1em 0px
   margin 0
 code
   display block
-  color #e06c75
+  color #3182bd
   width 100%
   overflow scroll
   padding 1em
@@ -14,14 +14,18 @@ h3
   padding-left 1em
   color grey
 table
-  display table
+  width 100%
+  display block
+  padding 1em
   font-size 13px
   line-height 1.5
   margin-bottom 45px
+  overflow auto
   background-color #fff
   border-collapse collapse
   color #34495e
-  padding 1em
+tbody
+  width 100%
 th
   padding 8px 10px
   text-align left
@@ -32,3 +36,12 @@ td
   padding 8px
   border 1px solid #eaeefb
   font-size 14px
+  @media screen and (max-width: 425px)
+    font-size 12px
+
+.hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst
+  color #3182bd
+.hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number
+  color #e91e63
+.hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string
+  color #756bb1

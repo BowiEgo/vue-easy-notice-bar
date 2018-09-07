@@ -6663,8 +6663,8 @@ vm-browserify@0.0.4:
     indexof "0.0.1"
 
 vue-easy-notice-bar@^1.1.1:
-  version "1.1.1"
-  resolved "http://registry.npm.taobao.org/vue-easy-notice-bar/download/vue-easy-notice-bar-1.1.1.tgz#a2dfa8bfa66c381614d03537f17e4ddcc6d4dc78"
+  version "1.1.2"
+  resolved "http://registry.npm.taobao.org/vue-easy-notice-bar/download/vue-easy-notice-bar-1.1.2.tgz#b819c98c3bd1aebcc330128644519b342e15ba63"
   dependencies:
     less "^3.8.1"
     vue "^2.5.17"

@@ -36,8 +36,8 @@ Vue.use(NoticeBar)
       '换个电脑，可以解决百分之九十的问题。',
       '解决掉提出bug的人,可以解决百分之一百的问题。'
     ]"
-    bg-color="#ffdca9"
-    color="#b36f0c"/>
+    bg-color="#e91e63"
+    color="#fff"/>
 
 ```shell
 import { NoticeBarVertical } from 'vue-easy-notice-bar'
@@ -52,8 +52,8 @@ Vue.use(NoticeBarVertical)
     '换个电脑，可以解决百分之九十的问题。',
     '解决掉提出bug的人,可以解决百分之一百的问题。'
   ]"
-  :bg-color="'#ffdca9'"
-  :color="'#b36f0c'"/>
+  :bg-color="'#e91e63'"
+  :color="'#fff'"/>
 ```
 
 ### 3D垂直滚动
@@ -84,7 +84,7 @@ Vue.use(NoticeBarVertical)
 <notice-bar
     :text="'今天天气多云转晴'"
     mode="right"
-    bg-color="#ff9800"
+    bg-color="#009688"
     :delay="0"
     :outview="true"
     color="#fff"/>
@@ -92,7 +92,7 @@ Vue.use(NoticeBarVertical)
 <notice-bar
   :text="'今天天气多云转晴'"
   mode="right"
-  bg-color="#ff9800"
+  bg-color="#009688"
   :delay="0"
   :outview="true"
   color="#fff"/>
@@ -131,4 +131,4 @@ Vue.use(NoticeBarVertical)
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
-| click | 点击事件回调 | - |
+| click | 点击事件回调 | `-` |
